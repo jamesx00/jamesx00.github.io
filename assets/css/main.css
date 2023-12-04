@@ -1603,6 +1603,22 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
+}
+
 .top-divider {
   position: absolute;
   top: 0;
@@ -1664,6 +1680,30 @@ video {
 .prose :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)){
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+p code{
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 248 248 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.prose
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before {
+  content: "";
+}
+
+.prose
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+  content: "";
 }
 
 @media (prefers-color-scheme: dark){
@@ -1754,6 +1794,21 @@ video {
 
 .group:hover .group-hover\:opacity-100{
   opacity: 1;
+}
+
+.prose-a\:text-teal-500 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))){
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity));
+}
+
+.prose-a\:hover\:text-teal-600:hover :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))){
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+}
+
+.hover\:prose-a\:text-teal-600 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))):hover{
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
 }
 
 .prose-pre\:bg-transparent :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))){
